@@ -24,47 +24,41 @@ Nothing needs to be saved if the page is reloaded (i.e don’t have to use cooki
 
 ### File structure 
 
-Devlopment :
-app > css
-      images
-      js
-      src
-      index.html
-
-Final build :
-dist > css 
-       js
-       index.html
+    $ Devlopment :
+    $ app > css
+    $       images 
+    $       js 
+    $       src 
+    $       index.html 
+    
+    
+    $ Final build :
+    $ dist > css
+    $       js  
+    $       index.html 
 
 
 ---
 
 ## Languages & tools
 
-   HTML / Javascript / css / SVG
-  
-   Visual Studio Code 
+    $  HTML / Javascript / css / SVG
+    $  Visual Studio Code
+    $  SASS   >   Normalize &  Flex-grid
+    $  JS lib >  jquery  & jquery-easy-autocomplete     
+    $  TR     >  grunt 
+    $  grunt pluging :
+    $        grunt-browser-sync
+    $        grunt-sass
+    $        grunt-contrib-watch*
+    $        grunt-contrib-jshint
+    $        grunt-bower
+    $        grunt-contrib-uglify
+    $        grunt-contrib-copy
+    $        grunt-contrib-clean         
+    $        REST API  >   https://restcountries.eu/rest/v2 
 
-  SASS  Normalize
-        Flex-grid
 
-  JS lib    jquery
-            jquery-easy-autocomplete 
-
-  TR    grunt 
-        grunt pluging :  
-              grunt-browser-sync
-              grunt-sass
-              grunt-contrib-watch*
-              grunt-contrib-jshint
-              grunt-bower
-              grunt-contrib-uglify
-              grunt-contrib-copy
-              grunt-contrib-clean
-
-REST API
-
-https://restcountries.eu/rest/v2 
 
 
          
