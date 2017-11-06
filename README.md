@@ -3,7 +3,7 @@
 
 Based on your new rquirments update and your feedback. I've updated my app to reflect better understanding of your rquirments and  present a closer solution.
 
-You can check the  here [Demo](http://searq.azurewebsites.net/)
+You can check the [Demo](http://searq.azurewebsites.net/) here
 
 * This time I tried to stay true to the original design as much as possible.
 * I used SVG graphics as a sprite sheet rquested in the css file as a background.
