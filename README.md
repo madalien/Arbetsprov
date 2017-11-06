@@ -1,7 +1,7 @@
 
 # Arbetsprov Ver 2
 
-Based on your new rquirments update and your feedback. I've updated my app to reflect better understanding of your rquirments and presint a closer solution.
+Based on your new rquirments update and your feedback. I've updated my app to reflect better understanding of your rquirments and  present a closer solution.
 
 You can check the  here [Demo](http://searq.azurewebsites.net/)
 
