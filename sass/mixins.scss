@@ -1,0 +1,52 @@
+@mixin grd ( $ang, $clr-1, $clr-2, $alpha) {
+    background: rgba($clr-1, $alpha);
+    background: -moz-linear-gradient($ang, rgba($clr-1, $alpha) 0%, rgba($clr-2, $alpha) 100%);
+    background: -webkit-linear-gradient($ang, rgba($clr-1, $alpha) 0%, rgba($clr-2, $alpha) 100%);
+    background: -o-linear-gradient($ang, rgba($clr-1, $alpha) 0%, rgba($clr-2, $alpha) 100%);
+    background: -ms-linear-gradient($ang, rgba($clr-1, $alpha) 0%, rgba($clr-2, $alpha) 100%);
+    background: linear-gradient($ang, rgba($clr-1, $alpha) 0%, rgba($clr-2, $alpha) 100%)
+}
+
+@mixin o ( $radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin trn($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin tform($args...) {
+    -webkit-transform: $args; 
+    -ms-transform: $args; 
+    -moz-transform: $args;
+    transform: $args;
+}
+
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}

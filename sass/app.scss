@@ -1,0 +1,298 @@
+/* ==========================================================================
+   Main Site Colors
+   ========================================================================== */
+
+$d-blue: #002650;
+$l-blue: #3b57a7;
+$light:#fff;
+$red:#d4313d;
+$grey:#979797;
+
+/* ==========================================================================
+  Global elements 
+   ========================================================================== */
+
+html {
+    font-family: sans-serif;
+    height: 100vh;
+    color: $light;
+    font-size: 1em;
+    line-height: 1.4;
+    @include grd ( 180deg, $d-blue, $l-blue, 1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+::-moz-selection, ::selection {
+    background: $red;
+    text-shadow: none;
+}
+
+
+ textarea {
+    resize: vertical;
+}
+
+input::-webkit-input-placeholder {
+    color: $light !important;
+}
+
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: $light !important;
+}
+
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $light !important;
+}
+
+input:-ms-input-placeholder {
+    color: $light !important;
+}
+
+/* ==========================================================================
+main Logo
+   ========================================================================== */
+
+$vl1 :265px;
+$vl2:65px;
+
+.logo {
+ 
+    width: ($vl1 / 1.5);
+    height: ($vl2 / 1.5);
+    margin: $vl2 auto $vl2 auto;
+    svg {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        fill: $light;
+    }
+}
+
+/* ==========================================================================
+Search box
+   ========================================================================== */
+
+$spc1:30px;
+$spc2:40px;
+$spc3:37px;
+
+.search-u {
+    position: relative;
+    padding: 0 $spc1 $spc1 $spc1;
+    [type="search"] {
+        font-weight: bold;
+        @include o (6px);
+        width: 100%;
+        padding: 1.5em;
+        color: $light;
+        background: rgba($light, .5);
+        @include trn (background .3s ease);
+        &:hover,
+        &:focus {
+            @include trn (background .3s ease);
+            background: rgba($light, .7);
+            -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.63);
+            -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.63);
+            box-shadow: 0px 0px 18px 0px rgba($d-blue, .8);
+        }
+    }
+    [type="submit"] {
+        position: absolute;
+        right: $spc3;
+        top: 14px;
+        width: $spc2;
+        height: $spc2;
+        background: transparent url("../img/search-ico.svg#svgView(viewBox(0, 0, 24, 24))") 0 0 no-repeat;
+        background-size: $spc2 $spc2;
+        border: none;
+        outline: none;
+        &:hover,
+        &:focus {
+            background: url("../img/search-ico.svg#svgView(viewBox(24, 0, 24, 24))");
+            background-size: $spc2 $spc2;
+        }
+    }
+}
+
+/* ==========================================================================
+Results Dropdown
+   ========================================================================== */
+
+#acResults {
+    position: absolute;
+    z-index: 20;
+    top: 60px;
+    left: $spc1;
+    width: calc(100% - #{$spc1 * 2 });
+    @include o (0 0 6px 6px);
+    display: none;
+    background:#bac5d6;
+    @include trn ( display .4s ease);
+    &.visible {
+        display: block;
+    }
+    .result {
+        border-bottom: 1px solid rgba($light, .2);
+        color: $d-blue;
+        padding: 1.2em 1.5em;
+        @include trn ( all .3s ease);
+        @include tform (scale(1));
+     
+        &:last-child {
+            border: none;
+        }
+        &.highlighted, &:hover {
+            @include o (6px);
+            background:$light ;
+            color: $red;
+            font-weight: bold;
+            @include tform (scale(1.01));
+            //  font-size: 115%;
+        }
+    }
+}
+
+/* ==========================================================================
+Saved Results 
+   ========================================================================== */
+
+.search-results {
+   // padding: 48px 0;
+    background: rgba($light, .1);
+    #results-list {
+        display: table;
+        width: 100%;
+    }
+    .list-item {
+        line-height: 0;
+        display: table-row;
+        padding: 40px 0;
+        @include trn (background-color .3s ease);
+        .name,
+        .date-time-u,
+        .btn-u {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .name,
+        .date-time-u {
+            padding: 0 0 0 2em;
+        }
+        .name {
+            width: 25%;
+            font-size: 110%;
+            font-weight: bold;
+            line-height: 1.2em;
+        }
+        .date-time-u {
+            font-size: 90%;
+            time {
+                margin:0 0 0 1em ;
+            }
+        }
+        .btn-u {
+            text-align: right;
+        }
+        &:hover {
+            background-color: rgba($light, .1);
+            .delete {
+                background-color: rgba($red, .49);
+                &:after {
+                    background-color: rgba($light, 1);
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+Delete Button 
+   ========================================================================== */
+//    $di1:54px;
+//    $di2:16px;
+//    $di3:19px;
+   $di1:72px;
+   $di2:22px;
+   $di3:26px;
+
+.delete {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    height: $di1;
+    width: $di1;
+    background-color: transparent;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: $di3;
+        right: $di3;
+        width: $di2;
+        height: $di2;
+        background: url("../img/search-ico.svg#svgView(viewBox(48, 0, 24, 24))") 0 0 no-repeat;
+        background-color: rgba($light, .1);
+        background-size: $di2 $di2;
+        @include o (50%);
+    }
+    &:hover,
+    &:focus {
+        background-color: rgba($red, .49);
+        &:after {
+            background-color: rgba($light, 1);
+        }
+    }
+}
+
+/* ==========================================================================
+Make it Responsive 
+   ========================================================================== */
+
+@include mq('tablet-small') {
+    $expand:2;
+    
+    .logo {
+        width: $vl1;
+        height: $vl2 ;
+        margin: ($vl2 * $expand) auto ($vl2 * $expand) auto;
+    }
+
+    .search-u {
+        padding: 0 ($spc1 * $expand) ($spc1 * $expand) ($spc1 * $expand);
+        [type="submit"] {
+            right: ($spc3 * $expand);
+        }
+    }
+
+    #acResults {
+        left: ($spc1 * $expand);
+        width: calc(100% - #{ ($spc1 * $expand) * 2 });
+    }
+
+    .search-results {
+         .list-item {
+             .name,
+             .date-time-u {
+                 padding: 0 0 0 4em;
+             } 
+         }
+     }
+
+    .delete {
+        $ex2:1.5;
+        height: ($di1 * $ex2);
+        width:  ($di1 * $ex2);
+        &:after {
+            top:  ($di3 * $ex2);
+            right: ($di3 * $ex2);
+            width: ($di2 * $ex2);
+            height: ($di2 * $ex2);
+            background-size: ($di2 * $ex2) ($di2 * $ex2);
+        }
+    }
+  
+}

@@ -1,73 +1,42 @@
-#  Arbetsprov
 
-## Requirements / Instructions :
+# Arbetsprov Ver 2
 
-Fork the repository
-Create a Feature Branch
-Implement a simple search function according to wireframes and UI (attached on github)
-The search should use a public REST API of your choice using JavaScript
-Search for title, return title (or something like that)
-Display partial search results in a list beneath the search field
-When hitting [ENTER] the selected search value should be saved with date/timestamp beneath the search box (as a search history)
-The page should be responsive, so that if width of window is changed it should adapt
-Nothing needs to be saved if the page is reloaded (i.e don’t have to use cookies/database etc)
+Based on your new rquirments update and your feedback. I've updated my app to reflect better understanding of your rquirments and presint a closer solution.
 
+You can check the  here [Demo](http://searq.azurewebsites.net/)
 
----
+* This time I tried to stay true to the original design as much as possible.
+* I used SVG graphics as a sprite sheet rquested in the css file as a background.
+* I used media query  to adjust space and size for smaller screens. 
+* css reset is the only external file used.
+* HTML code is valid and conforms to best practices and standards.
+* I tried to us vanilla Javascript instead of jquery to achieve a good and lightweight solution.
 
+## File structure & Resources  
 
-## Install
-
-    $ git clone https://github.com/madalien/Arbetsprov.git
-    $ cd PROJECT
-    $ npm install to install all dependances  
-
-### File structure 
-
-    $ Devlopment :
-    $ app > css
-    $       images 
-    $       js 
-    $       src 
-    $       index.html 
+index.html
+ <br>js <br> 
+ └──  app.js
+<br> css <br> 
+ └──  app.css
+<br> Sass <br> 
+ └──  app.scss<br>
+   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hub.scss<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mixins.scss<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;normalize.scss<br>
     
     
-    $ Final build :
-    $ dist > css
-    $       js  
-    $       index.html 
+I used [randomuser](https://randomuser.me/) as REST API Fetchig 20 fixed randome user details.
 
-
----
-
-## Languages & tools
-
-    $  HTML / Javascript / css / SVG
-    $  Visual Studio Code
-    $  SASS   >   Normalize &  Flex-grid
-    $  JS lib >  jquery  & jquery-easy-autocomplete     
-    $  TR     >  grunt 
-    $  grunt pluging :
-    $        grunt-browser-sync
-    $        grunt-sass
-    $        grunt-contrib-watch*
-    $        grunt-contrib-jshint
-    $        grunt-bower
-    $        grunt-contrib-uglify
-    $        grunt-contrib-copy
-    $        grunt-contrib-clean         
-    $        REST API  >   https://restcountries.eu/rest/v2 
+    
+    
+       
+ 
 
 
 
 
-         
-
-   
-
-
-
-
-
-
+              
+  
+  
 
