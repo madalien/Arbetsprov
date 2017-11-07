@@ -1,4 +1,20 @@
-  // When the page is done loading 
+  /*
+  - Check if the page done loading 
+  - Call the data from the JASON and add it to an array 
+  - Focus the input
+  - Add event listener for the input keyup
+  - checking if the input value matches any of the names
+  - displaying autocomplete results list
+  - The first child gets a class of "highlighted"
+  - Show the results
+  - select a result on mouse click 
+  - Change the highlight class on hover 
+  - toggling the results list on and off based on action
+  - Saving the searched result on submit with date and time 
+  - adding an event listner on the delete button and show the saved list if there is results 
+*/
+
+  //* When ready 
 document.addEventListener('DOMContentLoaded', function() {
     "use strict";
 
@@ -182,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         removeParent ();
         return false;
     }
-    // adding an event listner on the delete button 
+    // adding an event listner on the delete button and show the saved list if there is results 
     function  removeParent() {
         var delbtn =saveList.lastChild.lastChild.firstChild;
             delbtn.addEventListener('click', function(event){
