@@ -1,20 +1,4 @@
-  /*
-  - Check if the page done loading 
-  - Call the data from the JASON and add it to an array 
-  - Focus the input
-  - Add event listener for the input keyup
-  - checking if the input value matches any of the names
-  - displaying autocomplete results list
-  - The first child gets a class of "highlighted"
-  - Show the results
-  - select a result on mouse click 
-  - Change the highlight class on hover 
-  - toggling the results list on and off based on action
-  - Saving the searched result on submit with date and time 
-  - adding an event listner on the delete button and show the saved list if there is results 
-*/
-
-  //* When ready 
+  // When the page is done loading 
 document.addEventListener('DOMContentLoaded', function() {
     "use strict";
 
@@ -72,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (results.classList.contains('visible')) {
+            var scrollMe = 0;
             switch (event.keyCode) {
                 case 13:
                     searchInput.value = results.children[resultsCursor].innerHTML;
@@ -83,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (resultsCursor > 0) {
                         resultsCursor--;
                         moveCursor(resultsCursor);
+                         scrollMe -= 350;
+                         window.scrollTo(0, scrollMe);
                     }
 
                     break;
@@ -90,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (resultsCursor < (matches.length - 1)) {
                         resultsCursor++;
                         moveCursor(resultsCursor);
+                         scrollMe += 350;
+                         window.scrollTo(0, scrollMe);
                     }
 
                     break;
@@ -186,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!searchValue) {
             return false;
         } else {
-
+          saveList.classList.remove('hidden');
           var listnode =  document.createElement('li');
           listnode.classList.add('list-item');
           listnode.innerHTML =  '<span class="name">'+ searchValue + '</span>'+ 
@@ -198,12 +187,18 @@ document.addEventListener('DOMContentLoaded', function() {
         removeParent ();
         return false;
     }
-    // adding an event listner on the delete button and show the saved list if there is results 
+    // adding an event listner on the delete button 
     function  removeParent() {
         var delbtn =saveList.lastChild.lastChild.firstChild;
             delbtn.addEventListener('click', function(event){
                 this.parentNode.parentNode.remove();
+                if(saveList.childNodes.length == 0)
+                saveList.classList.add('hidden');
             });
         
     }
+
+
+  
+
 });

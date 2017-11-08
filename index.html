@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,25 +10,21 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="css/app.css">
 </head>
-
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
     <!-- Add your site or application content here -->
-    <div class="logo"><svg title="Searsh me"><use xlink:href="#logo"></use></svg> </div>
+    <div class="logo"><svg><use xlink:href="#logo"></use></svg> </div>
     <form autocomplete="off" id="searchform">
         <div class="search-u">
             <input type="search" name="searchBox" id="searchBox" placeholder="search for a name Ex [ Emily ]" aria-label="Search Box">
-            <button type="submit" value="" aria-label="Search button"></button>
+            <button type="submit" value="">Search Name</button>
             <ul id="acResults">
             </ul>
         </div>
     </form>
-    <div class="search-results">
-        <ul id="results-list">
-        </ul>
-    </div>
+        <ul id="results-list" class="hidden"></ul>
     <svg>
         <defs>
             <symbol id="logo" viewBox="0 0 213.8 66">
